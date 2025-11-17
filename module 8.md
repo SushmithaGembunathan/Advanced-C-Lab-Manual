@@ -1,7 +1,7 @@
-EXP NO:6 C PROGRAM PRINT THE LOWERCASE ENGLISH WORD CORRESPONDING TO THE NUMBER
-Aim:
+# EXP NO:6 C PROGRAM PRINT THE LOWERCASE ENGLISH WORD CORRESPONDING TO THE NUMBER
+## Aim:
 To write a C program print the lowercase English word corresponding to the number
-Algorithm:
+## Algorithm:
 1.	Start
 - Initialize an integer variable n.
 2.	Input Validation
@@ -14,30 +14,48 @@ Algorithm:
 -	Default: Print "Greater than 13"
 4.	Exit the program.
  
-Program:
+## Program:
 
-//type your code here
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    switch(n) {
+        case 5:  printf("seventy one\n"); break;
+        case 6:  printf("seventy two\n"); break;
+        case 7:  printf("seventy three\n"); break;
+        case 8:  printf("seventy four\n"); break;
+        case 9:  printf("seventy five\n"); break;
+        case 10: printf("seventy six\n"); break;
+        case 11: printf("seventy seven\n"); break;
+        case 12: printf("seventy eight\n"); break;
+        case 13: printf("seventy nine\n"); break;
+        default: printf("Greater than 13\n");
+    }
+
+    return 0;
+}
+```
 
 
 
 
-Output:
+## Output:
+
+<img width="458" height="162" alt="image" src="https://github.com/user-attachments/assets/a1e0ecf4-d3f1-4fd5-82bd-287e08e63457" />
 
 
-//paste your output here
-
-
-
-
-
-
-Result:
+## Result:
 Thus, the program is verified successfully
  
-EXP NO:7 C PROGRAM TO PRINT TEN SPACE-SEPARATED INTEGERS     IN A SINGLE  LINE DENOTING THE FREQUENCY OF EACH DIGIT FROM 0 TO 3 .
-Aim:
+# EXP NO:7 C PROGRAM TO PRINT TEN SPACE-SEPARATED INTEGERS     IN A SINGLE  LINE DENOTING THE FREQUENCY OF EACH DIGIT FROM 0 TO 3 .
+## Aim:
 To write a C program to print ten space-separated integers in a single line denoting the frequency of each digit from 0 to 3.
-Algorithm:
+## Algorithm:
 1.	Start
 2.	Declare char array a[50] outer loop for each digit from 0 to 3
 3.	Initialize counter c to 0
@@ -45,24 +63,49 @@ Algorithm:
 5.	Increment h to move to the next digit
 6.	End
  
-Program:
+## Program:
 
-//type your code here
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char a[50];
+    int count[4] = {0, 0, 0, 0};
+
+    printf("Enter a string of digits: ");
+    scanf("%s", a);
+
+    for(int i = 0; i < strlen(a); i++) {
+        if(a[i] >= '0' && a[i] <= '3') {
+            count[a[i] - '0']++;
+        }
+    }
+
+    for(int i = 0; i < 4; i++) {
+        printf("%d ", count[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+```
 
 
 
 
-Output:
+## Output:
 
-
-//paste your output here
-
-
+<img width="582" height="179" alt="image" src="https://github.com/user-attachments/assets/5897e36a-b2a0-46c3-b9c3-4312c8f8eda7" />
 
 
 
 
-Result:
+
+
+
+
+## Result:
 Thus, the program is verified successfully
 
 EXP NO:8 C PROGRAM TO PRINT ALL OF ITS PERMUTATIONS IN STRICT LEXICOGRAPHICAL ORDER.
@@ -83,16 +126,72 @@ Free the memory allocated for each string in s Free the memory allocated for s
 7.	End
  
 Program:
+```c
+#include <stdio.h>
+#include <string.h>
 
-//type your code here
+int next_permutation(int n, char *s)
+{
+    int k, l;
+    for (k = n - 2; k >= 0; k--)
+    {
+        if (s[k] < s[k + 1]) break;
+    }
+    if (k < 0) return 0;
+
+    for (l = n - 1; l > k; l--)
+    {
+        if (s[k] < s[l]) break;
+    }
+
+    char tmp = s[k];
+    s[k] = s[l];
+    s[l] = tmp;
+
+    for (int i = k + 1, j = n - 1; i < j; i++, j--)
+    {
+        tmp = s[i];
+        s[i] = s[j];
+        s[j] = tmp;
+    }
+    return 1;
+}
+
+int main()
+{
+    char s[100];
+    printf("Enter a string: ");
+    scanf("%s", s);
+
+    int n = strlen(s);
+
+    for (int i = 0; i < n - 1; i++)
+        for (int j = i + 1; j < n; j++)
+            if (s[i] > s[j])
+            {
+                char tmp = s[i];
+                s[i] = s[j];
+                s[j] = tmp;
+            }
+
+    printf("\nAll permutations in lexicographical order:\n");
+    do
+    {
+        printf("%s\n", s);
+    } while (next_permutation(n, s));
+
+    return 0;
+}
+```
+
 
 
 
 
 Output:
 
+<img width="519" height="341" alt="image" src="https://github.com/user-attachments/assets/3b90d006-c9f9-4b31-82f8-20cadb7de36c" />
 
-//paste your output here
 
 
 
@@ -117,15 +216,38 @@ Algorithm:
  
 Program:
 
-//type your code here
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    int len = n * 2 - 1;
+
+    for (int i = 0; i < len; i++) {
+        for (int j = 0; j < len; j++) {
+            int min = i < j ? i : j;
+            min = min < (len - 1 - i) ? min : (len - 1 - i);
+            min = min < (len - 1 - j) ? min : (len - 1 - j);
+            printf("%d ", n - min);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
 
 
 
 
 Output:
 
+<img width="448" height="386" alt="image" src="https://github.com/user-attachments/assets/44561e9c-7698-4596-8d32-58784accd13a" />
 
-//paste your output here
 
 
 
@@ -156,47 +278,30 @@ o	Call the square() function and display the result.
 
 Program:
 
-//type your code here
+```c
+#include <stdio.h>
+
+int square() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    return num * num;
+}
+
+int main() {
+    int result = square();
+    printf("Square: %d\n", result);
+    return 0;
+}
+```
 
 
 
 
 Output:
 
-
-//paste your output here
-
-
-
-
+<img width="437" height="193" alt="image" src="https://github.com/user-attachments/assets/decd509b-3f9b-4068-9a87-c7fe8e5788ae" />
 
 
 Result:
 Thus, the program is verified successfully
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
