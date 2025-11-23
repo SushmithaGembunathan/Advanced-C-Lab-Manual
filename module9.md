@@ -56,7 +56,7 @@ void peek()
 
 Output:
 
-<img width="812" height="670" alt="Screenshot 2025-11-21 090350" src="https://github.com/user-attachments/assets/75b05108-5322-403b-9295-c02bdc9e0f2d" />
+<img width="561" height="191" alt="image" src="https://github.com/user-attachments/assets/a33b50fd-8ee5-4af0-a2e0-498dfbbe84bc" />
 
 
 
@@ -95,13 +95,14 @@ void push (float data)
 
 Output:
 
-<img width="555" height="718" alt="Screenshot 2025-11-21 090400" src="https://github.com/user-attachments/assets/5b010163-5af2-4ade-af63-6951ab839f77" />
+<img width="626" height="139" alt="image" src="https://github.com/user-attachments/assets/67e00ff1-ca7b-4bf8-806d-46393d4490a1" />
 
 
 
 
 
 Result:
+
 Thus, the program to push the given element in to a stack using array is verified successfully
 
 
@@ -135,7 +136,8 @@ void display(){
 
 Output:
 
-<img width="682" height="578" alt="image" src="https://github.com/user-attachments/assets/81fb5910-51e4-4042-996a-24b0ca0e92d0" />
+<img width="513" height="227" alt="image" src="https://github.com/user-attachments/assets/4efda2b9-e771-4dec-ab5b-dd1d6ce8d0fa" />
+
 
 
 
@@ -174,7 +176,8 @@ void enqueue(int data)
 
 Output:
 
-<img width="820" height="559" alt="Screenshot 2025-11-21 090418" src="https://github.com/user-attachments/assets/b84c183d-5c8b-4297-aba5-f5151d851bbc" />
+<img width="474" height="153" alt="image" src="https://github.com/user-attachments/assets/e65a1344-8849-4dbd-808d-d678a6e5aec9" />
+
 
 
 Result:
@@ -221,7 +224,7 @@ void dequeue()
 
 Output:
 
-<img width="813" height="778" alt="Screenshot 2025-11-21 090425" src="https://github.com/user-attachments/assets/0adc21ca-3ed2-4ff7-b6c7-4e13990a34e2" /> 
+<img width="452" height="242" alt="image" src="https://github.com/user-attachments/assets/e93d9dc6-762f-4c52-8127-f4a72d534afa" />
 
 
 
